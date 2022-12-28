@@ -40,7 +40,7 @@ class ProcessDebtService implements IProcessDebtInterface
     {
         try {
             $charges = $this->importCsv($fileName);
-dd($charges);
+
             foreach ($charges[0] as $charge) {
 
                 $response = $this->performRequest('POST', 'transactions', $charge);
