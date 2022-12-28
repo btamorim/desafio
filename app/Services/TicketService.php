@@ -132,13 +132,13 @@ class TicketService implements ITicketInterface
                 // $ticket = Ticket::where('ticketId', $ticketId)->update($data);
                 
                 $this->statusCode = StatusServiceEnum::STATUS_CODE_SUCCESSO->value;
-                $this->msg = 'Ticket downloaded successfully.';
+                $this->msg = 'Ticket reconcile successfully.';
 
                 return true;
             
             } catch (\Throwable $th) {
                 $this->statusCode = StatusServiceEnum::STATUS_CODE_ERRO->value;
-                $this->msg = "It was not possible to download the ticket. Error: {$th->getMessage()}";
+                $this->msg = "It was not possible to reconcile the ticket. Error: {$th->getMessage()}";
 
             }
         }
